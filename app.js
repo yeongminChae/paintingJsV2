@@ -1,5 +1,6 @@
 const textInput = document.getElementById("text");
 const saveBtn = document.getElementById("save-btn");
+const chooseBtn = document.getElementById("choose-btn");
 const fileInput = document.getElementById("file");
 const modeBtn = document.getElementById("mode-btn");
 const destroyBtn = document.getElementById("destroy-btn");
@@ -21,6 +22,7 @@ ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 let isPainting = false;
 let isFilling = false;
+let isChoosing = false;
 
 const onMove = (event) => {
   if (isPainting) {
@@ -94,14 +96,27 @@ const onFileChange = (event) => {
   };
 };
 
+const onChooseModeClick = () => {
+  if (isChoosing) {
+    isChoosing = false;
+    chooseBtn.innerText = "Stroke";
+  } else {
+    isChoosing = true;
+    chooseBtn.innerText = "Text";
+  }
+};
+
 const onDoubleClick = (event) => {
   const text = textInput.value;
   if (text !== "") {
     ctx.save();
     ctx.lineWidth = 1;
     ctx.font = "48px serif";
-    //   ctx.strokeText(text, event.offsetX, event.offsetY);
-    ctx.fillText(text, event.offsetX, event.offsetY);
+    if (isChoosing === true) {
+      ctx.strokeText(text, event.offsetX, event.offsetY);
+    } else if (isChoosing !== true) {
+      ctx.fillText(text, event.offsetX, event.offsetY);
+    }
     ctx.restore();
   }
 };
@@ -129,5 +144,6 @@ modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyBtn);
 eraserBtn.addEventListener("click", onEraserBtn);
 saveBtn.addEventListener("click", onSaveClick);
+chooseBtn.addEventListener("click", onChooseModeClick);
 
 fileInput.addEventListener("change", onFileChange);
