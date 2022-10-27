@@ -61,10 +61,10 @@ const onColorclick = (event) => {
 const onModeClick = () => {
   if (isFilling) {
     isFilling = false;
-    modeBtn.innerText = "Fill";
+    modeBtn.innerText = "🩸 Fill";
   } else {
     isFilling = true;
-    modeBtn.innerText = "Draw";
+    modeBtn.innerText = "💧 Draw";
   }
 };
 
@@ -82,7 +82,7 @@ const onDestroyBtn = () => {
 const onEraserBtn = () => {
   ctx.strokeStyle = "white";
   isFilling = false;
-  modeBtn.innerText = "Fill";
+  modeBtn.innerText = "🩸 Fill";
 };
 
 const onFileChange = (event) => {
@@ -99,10 +99,10 @@ const onFileChange = (event) => {
 const onChooseModeClick = () => {
   if (isChoosing) {
     isChoosing = false;
-    chooseBtn.innerText = "Stroke";
+    chooseBtn.innerText = "🆃 Stroke";
   } else {
     isChoosing = true;
-    chooseBtn.innerText = "Text";
+    chooseBtn.innerText = "𝕋 Text";
   }
 };
 
