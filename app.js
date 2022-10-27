@@ -1,5 +1,8 @@
 const lineWidth = document.getElementById("line-width");
 const color = document.getElementById("color");
+const colorOptions = Array.from(
+  document.getElementsByClassName("color-option")
+);
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -35,6 +38,13 @@ const onColorChange = (event) => {
   ctx.strokeStyle = event.target.value;
 };
 
+const onColorclick = (event) => {
+  const colorValue = event.target.dataset.color;
+  ctx.fillStyle = colorValue;
+  ctx.strokeStyle = colorValue;
+  color.value = colorValue;
+};
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
@@ -42,3 +52,4 @@ canvas.addEventListener("mouseleave", cancelPainting);
 
 lineWidth.addEventListener("change", onLineWidthChange);
 color.addEventListener("change", onColorChange);
+colorOptions.forEach((color) => color.addEventListener("click", onColorclick));
