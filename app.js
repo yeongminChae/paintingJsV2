@@ -1,4 +1,5 @@
 const lineWidth = document.getElementById("line-width");
+const color = document.getElementById("color");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -29,9 +30,15 @@ const onLineWidthChange = (event) => {
   ctx.lineWidth = event.target.value;
 };
 
+const onColorChange = (event) => {
+  ctx.fillStyle = event.target.value;
+  ctx.strokeStyle = event.target.value;
+};
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 
 lineWidth.addEventListener("change", onLineWidthChange);
+color.addEventListener("change", onColorChange);
