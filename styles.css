@@ -75,6 +75,10 @@ input#file {
   display: none;
 }
 
+label#label-file:hover {
+  opacity: 0.85;
+}
+
 input#text {
   all: unset;
   padding: 10px 0px;
@@ -83,4 +87,25 @@ input#text {
   text-align: center;
   background-color: white;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pencil {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#pencil-span {
+  font-weight: 200;
+  margin-top: 10px;
+}
+
+.brush-width {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#brush-span {
+  font-weight: 200;
 }
