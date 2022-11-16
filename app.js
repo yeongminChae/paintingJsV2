@@ -110,15 +110,11 @@ const onDestroyBtn = () => {
 };
 
 const onEraserClickBtn = () => {
-  if (isFilling === false && isColorFilling === false) {
-    ctx.strokeStyle = "black";
-  } else {
-    ctx.strokeStyle = "white";
-    isFilling = false;
-    isColorFilling = false;
-    modeBtn.innerText = "🩸 Fill";
-    modeFillBtn.innerText = "⚫️ Put Color";
-  }
+  ctx.strokeStyle = "white";
+  isFilling = false;
+  isColorFilling = false;
+  modeBtn.innerText = "🩸 Fill";
+  modeFillBtn.innerText = "⚫️ Put Color";
 };
 
 const onFileChange = (event) => {
