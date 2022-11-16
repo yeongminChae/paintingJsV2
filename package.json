@@ -1,0 +1,26 @@
+{
+  "name": "painting-version2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.conf.js",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeongminChae/paintingJsV2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeongminChae/paintingJsV2/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  },
+  "homepage": "https://yeongminChae.github.io/paintingJsV2"
+}
